@@ -1,0 +1,50 @@
+[
+  {
+    "Id":1,
+    "SellRent":1,
+    "Name":"Pearl beauty",
+    "Type":"Villa",
+    "Price":120000,
+    "Image":"../assets/images/prop-1.jpg"
+  },
+  {
+    "Id":2,
+    "SellRent":1,
+    "Name":"Duplex house",
+    "Type":"Duplex",
+    "Price":95000,
+    "Image":"../assets/images/prop-2.jpg"
+  },
+  {
+    "Id":3,
+    "SellRent":2,
+    "Name":"Wonderful flat",
+    "Type":"Flat",
+    "Price":1500,
+    "Image":"../assets/images/prop-3.jpg"
+  },
+  {
+    "Id":4,
+    "SellRent":2,
+    "Name":"Amazing villa",
+    "Type":"Villa",
+    "Price":1800,
+    "Image":"../assets/images/prop-4.jpg"
+  },
+  {
+    "Id":5,
+    "SellRent":1,
+    "Name":"Duplex house2",
+    "Type":"Duplex",
+    "Price":98000,
+    "Image":"../assets/images/prop-5.jpg"
+  },
+  {
+    "Id":6,
+    "SellRent":2,
+    "Name":"Family flat",
+    "Type":"Flat",
+    "Price":1100,
+    "Image":"../assets/images/prop-6.jpg"
+  }
+]

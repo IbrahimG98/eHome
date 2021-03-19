@@ -1,0 +1,20 @@
+
+
+    <div class="card">
+    <div class="card-img-wrapper">
+      <img *ngIf="homeInput.Image" class="card-img-top" src={{homeInput.Image}}>
+      <ul class="list-inline text-center member-icons animate">
+        <li class="list-inline-item">
+          <button routerLink="/detail/{{homeInput.Id}}" class="btn btn-primary"><i class="fas fa-edit"></i></button></li>
+        <li class="list-inline-item">
+          <button class="btn btn-primary"><i class="fas fa-id-card-alt"></i></button></li>
+      </ul>
+    </div>
+    <div class="card-body p-2">
+      <h1>{{homeInput.Name}}</h1>
+      <h2>{{homeInput.Price}}</h2>
+      <h3>{{homeInput.Type}}</h3>
+    </div>
+    </div>
+
+
