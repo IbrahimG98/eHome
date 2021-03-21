@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IHouseBase } from 'src/app/model/iHouseBase';
 import { IHouse } from '../IHouse.interface';
 
 @Component({
@@ -8,11 +9,12 @@ import { IHouse } from '../IHouse.interface';
   styleUrls: ['./property-card.component.css']
 })
 export class PropertyCardComponent implements OnInit {
-  @Input() homeInput:IHouse;
+  @Input() homeInput:IHouseBase;
+  @Input() hideIcons:boolean;
+
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-
 
   }
 

@@ -44,8 +44,7 @@ const appRoutes:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
-  ],
+    BsDropdownModule.forRoot()  ],
   providers: [],
   bootstrap: [AppComponent]
 })
