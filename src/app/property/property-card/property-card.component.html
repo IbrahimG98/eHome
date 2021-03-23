@@ -12,14 +12,16 @@
     </div>
     <div class="card-body p-1">
       <h2 class="mb-0">{{homeInput.Name}}</h2>
+      <span *ngIf="homeInput.Address">in {{homeInput.Address}}</span><br>
       <span>{{homeInput.City}}</span>
       <span *ngIf="homeInput.State">,{{homeInput.State}}</span>
       <span *ngIf="homeInput.Country && !homeInput.State">,{{homeInput.Country}}</span>
-      <h6 class="mt-2 ">{{homeInput.PType}} | {{homeInput.FType}}
+      <h6 class="mt-2">{{homeInput.PType}} | {{homeInput.FType}}
       </h6>
       <hr style="border-color: black;" class="mt-0 mb-2">
-      <h6 class="mb-0">Price: <span >{{homeInput.Price}}$</span> | Living area: {{homeInput.HouseSize}} sqft
-        | Lot: {{homeInput.LotSize}} acres</h6>
+      <h6 class="mb-0"> <span *ngIf="homeInput.Price">Price: {{homeInput.Price}}$</span><span *ngIf="homeInput.HouseSize">| Living area: {{homeInput.HouseSize}} sqft
+      </span><span *ngIf="homeInput.LotSize">| Lot: {{homeInput.LotSize}} acres</span> </h6><br>
+
     </div>
     </div>
 

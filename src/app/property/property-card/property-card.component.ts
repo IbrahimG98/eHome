@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IHouse } from 'src/app/model/iHouse';
 import { IHouseBase } from 'src/app/model/iHouseBase';
-import { IHouse } from '../IHouse.interface';
 
 @Component({
   selector: 'app-property-card',

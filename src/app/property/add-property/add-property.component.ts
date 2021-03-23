@@ -34,8 +34,24 @@ export class AddPropertyComponent implements OnInit {
           HouseSize:'',
           LotSize:''
    };
-  onNext()
+   homeInsert:IHouseBase={
+    Id:null,
+    Name:'',
+    SellRent:null,
+    Image:"../assets/images/prop-1.jpg",
+    Price:null,
+    PType:null,
+    FType:null,
+    Address:'',
+    City:'',
+    State:'',
+    Country:'',
+    HouseSize:'',
+    LotSize:''
+};
+  onNext(form:NgForm)
   {
+    console.log(form.value);
     this.selectedTab+=1;
   }
   onPageDown()

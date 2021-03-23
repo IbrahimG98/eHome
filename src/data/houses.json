@@ -8,10 +8,12 @@
     "Image":"../assets/images/prop-1.jpg",
     "City":"Baton Rouge",
     "State":"Louisiana",
+    "Address":"Oak Road 25",
      "Country":"USA",
      "FType":"Fully furnished",
      "HouseSize":2000,
-     "LotSize":1.5
+     "LotSize":1.5,
+     "Description":"This is dummy description on property."
   },
   {
     "Id":2,
@@ -22,10 +24,12 @@
     "Image":"../assets/images/prop-2.jpg",
     "City":"Paris",
     "State":"",
+    "Address":"Sout Boullevard 252",
      "Country":"France",
      "FType":"Semi furnished",
      "HouseSize":1300,
-     "LotSize":0.7
+     "LotSize":0.7,
+     "Description":"This is dummy description on property."
   },
   {
     "Id":3,
@@ -50,12 +54,14 @@
     "PType":"Duplex",
     "Price":98000,
     "Image":"../assets/images/prop-5.jpg",
+    "Address":"North Road Dr 25",
     "City":"Atlanta",
     "State":"Georgia",
      "Country":"USA",
      "FType":"Fully furnished",
      "HouseSize":1500,
-     "LotSize":0.85
+     "LotSize":0.85,
+     "Description":"This is dummy description on property."
   },
   {
     "Id":6,

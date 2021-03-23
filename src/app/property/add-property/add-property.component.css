@@ -6,3 +6,33 @@
 {
   color:red;
 }
+
+.title
+{
+  color:white;
+  background-color: lightskyblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.boxBorders
+{
+  border: 1px solid lightskyblue;
+}
+.boxesLinksClicked
+{
+  border: 1px solid lightskyblue;
+  color:white;
+  background-color: blue;
+  padding: 1%;
+  cursor: pointer;
+  border-radius: 34px;
+}
+.boxesLinks
+{
+  border: 1px solid lightskyblue;
+  color:white;
+  background-color: lightskyblue;
+  padding: 1%;
+  cursor: pointer;
+  border-radius: 34px;
+}
