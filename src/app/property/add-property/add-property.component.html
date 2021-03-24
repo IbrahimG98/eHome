@@ -16,9 +16,9 @@
          <div *ngIf="selectedTab==1">
            <p class="mt-2 ml-2">I want to</p>
           <div class="form-group col-12">
-            <input type="radio" id="Sell" value="1" name="SellRent">
+            <input type="radio" id="SellRent" value=1 [(ngModel)]="homeView.SellRent" name="SellRent">
             <label class="ml-2 mr-2">Sell</label>
-            <input type="radio" id="Rent" value="2" name="SellRent">
+            <input type="radio" id="SellRent" value=2 [(ngModel)]="homeView.SellRent" name="SellRent">
             <label class="ml-2">Rent</label>
           </div>
           <div class="form-group col-12">
@@ -104,9 +104,10 @@
         </div>
 
          <div class="form-group col-12">
-          <button (click)="onNext(form)" *ngIf="selectedTab<5" type="button" class="btn btn-primary mr-2">Next</button>
+          <button (click)="onNext(form)" *ngIf="selectedTab<5" type="button" [disabled]="!form.valid" class="btn btn-primary mr-2">Next</button>
           <button (click)="onPageDown()" *ngIf="selectedTab>1 && selectedTab<5" type="button" class="btn btn-secondary">Back</button>
-          <button *ngIf="selectedTab==5" type="submit" [disabled]="!form.valid" class="btn btn-primary mr-2">Save</button>
+          <button *ngIf="selectedTab==5" (click)="onSubmit(form)" type="button" [disabled]="!form.valid"
+           class="btn btn-primary mr-2">Save</button>
           <button *ngIf="selectedTab==5" class="btn btn-secondary">Cancel</button>
          </div>
        </form>

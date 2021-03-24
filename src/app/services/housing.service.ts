@@ -29,6 +29,10 @@ export class HousingService {
 
         })
     );
+  }
 
+  addProperty(obj)
+  {
+    localStorage.setItem('house',JSON.stringify(obj));
   }
 }

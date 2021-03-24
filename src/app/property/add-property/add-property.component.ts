@@ -1,8 +1,9 @@
-import { Component, ElementRef, OnInit, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IHouseBase } from 'src/app/model/iHouseBase';
-import { IHouse } from '../IHouse.interface';
+import { HousingService } from 'src/app/services/housing.service';
+import * as alertify from "alertifyjs";
 
 @Component({
   selector: 'app-add-property',
@@ -11,7 +12,8 @@ import { IHouse } from '../IHouse.interface';
 })
 export class AddPropertyComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private houseService:HousingService,
+    private router:Router) { }
   selectedTab:number;
   ngOnInit(): void {
     this.selectedTab=1;
@@ -33,8 +35,8 @@ export class AddPropertyComponent implements OnInit {
           Country:'',
           HouseSize:'',
           LotSize:''
-   };
-   homeInsert:IHouseBase={
+  };
+  homeMap:IHouseBase={
     Id:null,
     Name:'',
     SellRent:null,
@@ -49,9 +51,10 @@ export class AddPropertyComponent implements OnInit {
     HouseSize:'',
     LotSize:''
 };
+  insertObject={};
   onNext(form:NgForm)
   {
-    console.log(form.value);
+    this.insertObject={...this.insertObject,...form.value};
     this.selectedTab+=1;
   }
   onPageDown()
@@ -66,9 +69,36 @@ export class AddPropertyComponent implements OnInit {
   {
     this.selectedTab=value;
   }
+
+  mapHouse(object)
+  {
+    this.homeMap.PType=object["PType"];
+    this.homeMap.FType=object["FType"];
+    this.homeMap.Name=object["Name"];
+    this.homeMap.SellRent=+object["SellRent"];
+    this.homeMap.Address=object["address"];
+    this.homeMap.City=object["city"];
+    this.homeMap.Country=object["country"];
+    this.homeMap.State=object["state"];
+    this.homeMap.LotSize=object["lot"];
+    this.homeMap.HouseSize=object["houseSize"];
+    this.homeMap.Price=object["price"];
+  }
   onSubmit(form:NgForm)
   {
-    console.log(form.value);
+    this.insertObject={...this.insertObject,...form.value};
+    this.mapHouse(this.insertObject);
+    this.houseService.addProperty(this.homeMap);
+    alertify.success("You have successfully added your property!");
+    if(this.homeMap.SellRent===1)
+    {
+      this.router.navigate(['']);
+    }
+    else
+    {
+      this.router.navigate(['rent']);
+    }
+    //console.log("Object that will be sent to API:",this.insertObject);
   }
 
 }

@@ -24,6 +24,11 @@ export class PropertyListComponent implements OnInit {
    this.housingservice.getAllProperties(this.SellRent).subscribe(
      data=>{
        this.homes=data;
+       let newHouse=JSON.parse(localStorage.getItem('house'));
+       if(newHouse)
+       {
+         this.homes=[newHouse,...this.homes];
+       }
      }
    );
   }
