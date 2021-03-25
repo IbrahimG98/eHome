@@ -1,10 +1,31 @@
-<p>property-detail works!</p>
-<p>Selected property ID is: {{propertyId}}</p>
-<button (click)="onSelectNext()" class="btn btn-primary">Go to next page</button>
-<br/><br>
+<div class="row shadow">
+  <div class="col-sm-4 p-0">
+      <div class="card">
+        <div class="card-img-wrapper">
+            <img class="card-img-top" src={{propertyDetail.Image}}>
+        </div>
+        <div class="card-body">
+          <h2 class="mb-0">{{propertyDetail.Name}}</h2>
+          <span *ngIf="propertyDetail.Address">in {{propertyDetail.Address}}</span><br>
+          <span>{{propertyDetail.City}}</span>
+          <span *ngIf="propertyDetail.State">,{{propertyDetail.State}}</span>
+          <span *ngIf="propertyDetail.Country && !propertyDetail.State">,{{propertyDetail.Country}}</span>
+          <h6 class="mt-2">{{propertyDetail.PType}} | {{propertyDetail.FType}}
+          </h6>
+          <hr style="border-color: black;" class="mt-0 mb-2">
+          <h6 class="mb-0"> <span *ngIf="propertyDetail.Price">Price: {{propertyDetail.Price}}$</span><span *ngIf="propertyDetail.HouseSize">| Living area: {{propertyDetail.HouseSize}} sqft
+          </span><span *ngIf="propertyDetail.LotSize">| Lot: {{propertyDetail.LotSize}} acres</span> </h6><br>
+        </div>
+        <div class="card-footer">
+              <div class="btn-group d-flex">
+             <button class="btn btn-primary">Like</button>
+             <button class="btn btn-success ml-2">Message</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
 
-
-<button routerLink="/detail/1" class="btn btn-primary">1</button>
-<button routerLink="/detail/2" class="btn btn-primary">2</button>
-<button routerLink="/detail/3" class="btn btn-primary">3</button>
+  </div>
+</div>
 

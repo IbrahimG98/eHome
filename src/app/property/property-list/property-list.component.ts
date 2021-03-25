@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HousingService } from 'src/app/services/housing.service';
-import { IHouse } from '../IHouse.interface';
+import { IHouse } from '../../model/iHouse';
 
 @Component({
   selector: 'app-property-list',
@@ -24,11 +24,6 @@ export class PropertyListComponent implements OnInit {
    this.housingservice.getAllProperties(this.SellRent).subscribe(
      data=>{
        this.homes=data;
-       let newHouse=JSON.parse(localStorage.getItem('house'));
-       if(newHouse)
-       {
-         this.homes=[newHouse,...this.homes];
-       }
      }
    );
   }

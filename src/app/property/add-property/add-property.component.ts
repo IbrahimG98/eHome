@@ -72,6 +72,7 @@ export class AddPropertyComponent implements OnInit {
 
   mapHouse(object)
   {
+    this.homeMap.Id=101;
     this.homeMap.PType=object["PType"];
     this.homeMap.FType=object["FType"];
     this.homeMap.Name=object["Name"];
