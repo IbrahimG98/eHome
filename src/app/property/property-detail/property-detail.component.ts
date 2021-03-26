@@ -30,10 +30,10 @@ export class PropertyDetailComponent implements OnInit {
     LotSize:'',
     Description:''
 };
-
+public selectedTab:number;
   ngOnInit(): void {
     this.propertyId=Number(this.route.snapshot.params["id"]);
-
+     this.selectedTab=1;
     this.route.params.subscribe(data=>
       {
         this.propertyId=+data["id"];
@@ -44,6 +44,12 @@ export class PropertyDetailComponent implements OnInit {
           })
       });
   }
+
+
+setSelectedTab(value:number)
+{
+  this.selectedTab=value;
+}
 
 
 }

@@ -13,7 +13,8 @@
           <h6 class="mt-2">{{propertyDetail.PType}} | {{propertyDetail.FType}}
           </h6>
           <hr style="border-color: black;" class="mt-0 mb-2">
-          <h6 class="mb-0"> <span *ngIf="propertyDetail.Price">Price: {{propertyDetail.Price}}$</span><span *ngIf="propertyDetail.HouseSize">| Living area: {{propertyDetail.HouseSize}} sqft
+          <h6 class="mb-0"> <span *ngIf="propertyDetail.Price">Price:
+           {{propertyDetail.Price}}$</span><span *ngIf="propertyDetail.HouseSize">| Living area: {{propertyDetail.HouseSize}} sqft
           </span><span *ngIf="propertyDetail.LotSize">| Lot: {{propertyDetail.LotSize}} acres</span> </h6><br>
         </div>
         <div class="card-footer">
@@ -24,8 +25,81 @@
         </div>
     </div>
   </div>
-  <div class="col-sm-8">
+  <div class="col-6">
+    <div class="card">
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" (click)="setSelectedTab(1)" >Basic</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="setSelectedTab(2)">Address</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="setSelectedTab(3)">Other</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="setSelectedTab(4)">Photos</a>
+        </li>
+      </ul>
+
+      <div class="row" *ngIf="selectedTab==1">
+        <div class="contentDiv">
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">Property name</strong><br>
+          <span class="data">{{propertyDetail.Name}}</span>
+          </div>
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">Property type</strong><br>
+            <span class="data">{{propertyDetail.PType}}</span>
+          </div>
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">Property for</strong><br>
+          <span *ngIf="propertyDetail.SellRent===1" class="data">Sell</span>
+          <span *ngIf="propertyDetail.SellRent===2" class="data">Rent</span>
+          </div>
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">Furnishing level</strong><br>
+          <span class="data">{{propertyDetail.FType}}</span>
+          </div>
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">Price (in USD)</strong><br>
+          <span class="data">{{propertyDetail.Price}} $</span>
+          </div>
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">Lot size (in acres)</strong><br>
+          <span class="data">{{propertyDetail.LotSize}} acr</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="row" *ngIf="selectedTab==2">
+        <div class="contentDiv">
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">Property address</strong><br>
+          <span class="data">{{propertyDetail.Address}}</span>
+          </div>
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">City</strong><br>
+            <span class="data">{{propertyDetail.City}}</span>
+          </div>
+          <div *ngIf="propertyDetail.State" class="heading mr-3 ml-2">
+            <strong class="titles">State</strong><br>
+            <span class="data">{{propertyDetail.State}}</span>
+          </div>
+          <div class="heading mr-3 ml-2">
+            <strong class="titles">Country</strong><br>
+          <span class="data">{{propertyDetail.Country}}</span>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
 
   </div>
+</div>
 </div>
 
