@@ -28,22 +28,13 @@
   <div class="col-6">
     <div class="card">
 
-      <ul class="nav nav-tabs">
+      <!-- <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link" (click)="setSelectedTab(1)" >Basic</a>
+          <a class="nav-link" (click)="setSelectedTab(1)">Photos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="setSelectedTab(2)">Address</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="setSelectedTab(3)">Other</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="setSelectedTab(4)">Photos</a>
-        </li>
-      </ul>
+      </ul> -->
 
-      <div class="row" *ngIf="selectedTab==1">
+      <!-- <div class="row" *ngIf="selectedTab==1">
         <div class="contentDiv">
           <div class="heading mr-3 ml-2">
             <strong class="titles">Property name</strong><br>
@@ -91,6 +82,13 @@
             <strong class="titles">Country</strong><br>
           <span class="data">{{propertyDetail.Country}}</span>
           </div>
+        </div>
+
+      </div> -->
+
+      <div class="row" *ngIf="selectedTab===1">
+        <div class="contentDiv">
+          <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="width ngx-gallery"></ngx-gallery>
         </div>
 
       </div>

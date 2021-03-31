@@ -21,12 +21,18 @@
   align-items: flex-start;
   justify-content:space-evenly;
 }
+.ngx-gallery { display: inline-block; margin-bottom: 20px; }
 
 .titles
 {
-  font-size: 1.8em;
+  font-size: 1.6em;
 }
 .data
 {
-  font-size: 1.5em;
+  font-size: 1.3em;
+}
+.width
+{
+  margin-left: -10%;
+  max-width: 80%;
 }
