@@ -1,3 +1,4 @@
+<span>Today: {{timeandDate | date:'medium'}}</span><br>
 <div class="row">
   <div *ngFor="let home of homes" class="shadow-lg col-sm4">
     <app-property-card [homeInput]="home"></app-property-card>

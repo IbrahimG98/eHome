@@ -11,6 +11,7 @@ import { IHouse } from '../../model/iHouse';
 export class PropertyListComponent implements OnInit {
   SellRent=1;
   homes:Array<IHouse>;
+  timeandDate:Date=new Date();
 
   constructor(private route:ActivatedRoute,
     private housingservice:HousingService) { }
