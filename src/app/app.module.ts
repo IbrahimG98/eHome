@@ -17,7 +17,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 
 const appRoutes:Routes=[
-  {path:"",component:PropertyListComponent},
+  {path:"buy",component:PropertyListComponent},
   //{path:"**",component:PropertyListComponent},
   {path:"rent",component:PropertyListComponent},
   {path:"add-property",component:AddPropertyComponent},

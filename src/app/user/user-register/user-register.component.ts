@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { User } from '../../model/user';
 import { UsersService } from '../../services/users.service';
 import * as alertyfy from "alertifyjs";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-register',
@@ -14,7 +15,7 @@ export class UserRegisterComponent implements OnInit {
   registrationForm: FormGroup;
    user:User;
    userSubmitted:boolean;
-  constructor(private fb:FormBuilder,private userservice:UsersService) { }
+  constructor(private fb:FormBuilder,private userservice:UsersService,private router:Router) { }
 
   ngOnInit(): void {
     this.registrationForm=new FormGroup({
@@ -80,6 +81,12 @@ export class UserRegisterComponent implements OnInit {
     {
       alertyfy.error("An error occured while registering!Check your details!");
     }
+  }
+
+  toLogIn()
+  {
+    this.router.navigate(['user/login']);
+
   }
 
 }
